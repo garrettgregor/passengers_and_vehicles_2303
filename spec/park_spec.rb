@@ -9,7 +9,9 @@ RSpec.describe Park do
       yosemite = Park.new("Yosemite", 50)
 
       expect(yosemite).to be_a(Park)
+      expect(yosemite.name).to be_a(String)
       expect(yosemite.name).to eq("Yosemite")
+      expect(yosemite.admission_price).to be_an(Integer)
       expect(yosemite.admission_price).to eq(50)
       expect(yosemite.vehicles).to eq([])
     end
@@ -22,6 +24,7 @@ RSpec.describe Park do
 
       yosemite.add_vehicle(vehicle1)
 
+      expect(yosemite.vehicles).to be_an(Array)
       expect(yosemite.vehicles).to eq([vehicle1])
     end
   end
@@ -39,6 +42,7 @@ RSpec.describe Park do
       vehicle.add_passenger(taylor)    
       yosemite.add_vehicle(vehicle)
 
+      expect(yosemite.vehicles).to be_an(Array)
       expect(yosemite.vehicles).to eq([vehicle])
       expect(yosemite.passengers).to eq([charlie, jude, taylor])
     end
@@ -92,6 +96,7 @@ RSpec.describe Park do
       vehicle2.add_passenger(passenger2c)    
       yosemite.add_vehicle(vehicle2)
       
+      expect(yosemite.revenue).to be_an(Integer)
       expect(yosemite.revenue).to eq(300)
     end
   end
