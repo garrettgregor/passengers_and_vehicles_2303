@@ -20,4 +20,8 @@ class Passenger
   def driver?
     @driver
   end
+
+  def drive
+    @driver = true
+  end
 end
