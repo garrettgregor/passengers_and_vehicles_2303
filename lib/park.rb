@@ -23,4 +23,26 @@ class Park
   def revenue
     admission_price * passengers.count
   end
+
+  def all_attendees
+    passengers.map do |passenger|
+      passenger.name
+    end
+  end
+
+  def minors
+    passengers.map do |passenger|
+      if !passenger.adult?
+        passenger.name
+      end
+    end.compact
+  end
+  
+  def adults
+    passengers.map do |passenger|
+      if passenger.adult?
+        passenger.name
+      end
+    end.compact
+  end
 end
