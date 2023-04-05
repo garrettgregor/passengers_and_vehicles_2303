@@ -4,9 +4,9 @@ class Passenger
               :driver
 
   def initialize(passenger_details)
-    @name = passenger_details["name"]
-    @age = passenger_details["age"]
-    @driver = false
+    @name     = passenger_details["name"]
+    @age      = passenger_details["age"]
+    @driver   = false
   end
 
   def adult?

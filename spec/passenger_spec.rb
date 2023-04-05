@@ -29,7 +29,6 @@ RSpec.describe Passenger do
       taylor = Passenger.new({"name" => "Taylor", "age" => 12})
 
       expect(charlie.driver?).to be false
-      
     end
   end
   
