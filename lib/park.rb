@@ -37,4 +37,12 @@ class Park
       end
     end.compact
   end
+  
+  def adults
+    passengers.map do |passenger|
+      if passenger.adult?
+        passenger.name
+      end
+    end.compact
+  end
 end
