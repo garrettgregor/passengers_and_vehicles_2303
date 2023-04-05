@@ -23,8 +23,8 @@ RSpec.describe Passenger do
     end
   end
   
-  describe "speeding?" do
-    it "checks if the vehicle is speeding" do
+  describe "speed" do
+    it "make the vehicle speed" do
       vehicle = Vehicle.new("2001", "Honda", "Civic")
 
       expect(vehicle.speeding?).to be false
