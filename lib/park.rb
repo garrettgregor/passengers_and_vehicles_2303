@@ -23,4 +23,10 @@ class Park
   def revenue
     admission_price * passengers.count
   end
+
+  def all_attendees
+    passengers.map do |passenger|
+      passenger.name
+    end
+  end
 end
