@@ -34,4 +34,12 @@ RSpec.describe Passenger do
       expect(vehicle.speeding?).to be true
     end
   end
+  
+  describe "passenger" do
+    it "checks the number of passengers in the vehicle" do
+      vehicle = Vehicle.new("2001", "Honda", "Civic")
+
+      expect(vehicle.passengers).to eq([])
+    end
+  end
 end
