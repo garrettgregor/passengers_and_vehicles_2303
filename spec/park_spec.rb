@@ -11,6 +11,9 @@ RSpec.describe Park do
       expect(yosemite).to be_a(Park)
       expect(yosemite.name).to eq("Yosemite")
       expect(yosemite.admission_price).to eq(50)
+      expect(yosemite.vehicles).to eq([])
     end
   end
+
+
 end
