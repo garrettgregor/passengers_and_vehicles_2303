@@ -14,6 +14,15 @@ RSpec.describe Park do
       expect(yosemite.vehicles).to eq([])
     end
   end
+  
+  describe "add_vehicle" do
+    it "can collect the vehicles that enter the park" do
+      yosemite = Park.new("Yosemite", 50)
+      vehicle1 = Vehicle.new("2001", "Honda", "Civic")
 
+      yosemite.add_vehicle(vehicle1)
 
+      expect(yosemite.vehicles).to eq([vehicle1])
+    end
+  end
 end
