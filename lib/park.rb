@@ -19,4 +19,8 @@ class Park
       vehicle.passengers
     end.flatten
   end
+
+  def revenue
+    admission_price * passengers.count
+  end
 end
