@@ -11,6 +11,16 @@ RSpec.describe Passenger do
       expect(vehicle.year).to eq("2001")
       expect(vehicle.make).to eq("Honda")
       expect(vehicle.model).to eq("Civic")
+      expect(vehicle.speeding).to be false
+    end
+  end
+  
+  describe "speeding?" do
+    it "checks if the vehicle is speeding" do
+      vehicle = Vehicle.new("2001", "Honda", "Civic")
+
+      expect(vehicle).to be_a(Vehicle)
+      expect(vehicle.speeding?).to be false
     end
   end
 end
