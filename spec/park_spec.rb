@@ -25,4 +25,22 @@ RSpec.describe Park do
       expect(yosemite.vehicles).to eq([vehicle1])
     end
   end
+  
+  describe "passengers" do
+    it "can collect the number of passengers that entered the park" do
+      yosemite = Park.new("Yosemite", 50)
+      vehicle = Vehicle.new("2001", "Honda", "Civic")
+      charlie = Passenger.new({"name" => "Charlie", "age" => 18})    
+      jude = Passenger.new({"name" => "Jude", "age" => 20})    
+      taylor = Passenger.new({"name" => "Taylor", "age" => 12})    
+      
+      vehicle.add_passenger(charlie)    
+      vehicle.add_passenger(jude)    
+      vehicle.add_passenger(taylor)    
+      yosemite.add_vehicle(vehicle)
+
+      expect(yosemite.vehicles).to eq([vehicle])
+      expect(yosemite.passengers).to eq([charlie, jude, taylor])
+    end
+  end
 end

@@ -1,7 +1,8 @@
 class Park
   attr_reader :name,
               :admission_price,
-              :vehicles
+              :vehicles,
+              :passengers
   def initialize(name, admission_price)
     @name             = name
     @admission_price  = admission_price
@@ -10,5 +11,11 @@ class Park
 
   def add_vehicle(vehicle)
     @vehicles << vehicle
+  end
+
+  def passengers
+    vehicles.map do |vehicle|
+      vehicle.passengers
+    end.flatten
   end
 end
