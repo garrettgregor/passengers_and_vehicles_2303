@@ -29,4 +29,12 @@ class Park
       passenger.name
     end
   end
+
+  def minors
+    passengers.map do |passenger|
+      if !passenger.adult?
+        passenger.name
+      end
+    end.compact
+  end
 end
