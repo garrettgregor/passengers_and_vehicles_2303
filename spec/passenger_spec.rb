@@ -9,10 +9,11 @@ RSpec.describe Passenger do
       expect(charlie).to be_a(Passenger)
       expect(charlie.name).to eq("Charlie")
       expect(charlie.age).to eq(18)
+      expect(charlie.driver).to be false
     end
   end
 
-  describe "adult" do
+  describe "adult?" do
     it "can check if the passenger is an adult" do
       charlie = Passenger.new({"name" => "Charlie", "age" => 18})
       taylor = Passenger.new({"name" => "Taylor", "age" => 12})
@@ -21,64 +22,14 @@ RSpec.describe Passenger do
       expect(taylor.adult?).to be false
     end
   end
+  
+  describe "driver?" do
+    it "can check if the passenger is the driver" do
+      charlie = Passenger.new({"name" => "Charlie", "age" => 18})
+      taylor = Passenger.new({"name" => "Taylor", "age" => 12})
+
+      expect(charlie.driver?).to be false
+      
+    end
+  end
 end
-# charlie.driver?
-# # => false
-# charlie.drive
-
-# # => true
-
-# ## Iteration 2
-
-# Use TDD to create a `Vehicle` class that responds to the following interaction pattern:
-
-# ```ruby
-# pry(main)> require './lib/vehicle'
-# # => true
-
-# pry(main)> require './lib/passenger'
-# # => true
-
-# pry(main)> vehicle = Vehicle.new("2001", "Honda", "Civic")    
-# # => #<Vehicle:0x00007fe0da9c63d8...>
-
-# pry(main)> vehicle.year
-# # => "2001"
-
-# pry(main)> vehicle.make
-# # => "Honda"
-
-# pry(main)> vehicle.model
-# # => "Civic"
-
-# pry(main)> vehicle.speeding?
-# # => false
-
-# pry(main)> vehicle.speed
-
-# pry(main)> vehicle.speeding?
-# # => true
-
-# pry(main)> vehicle.passengers
-# # => []
-
-# pry(main)> charlie = Passenger.new({"name" => "Charlie", "age" => 18})    
-# # => #<Passenger:0x00007fe0da1ec450...>
-
-# pry(main)> jude = Passenger.new({"name" => "Jude", "age" => 20})    
-# # => #<Passenger:0x00007fe0da2730e0...>
-
-# pry(main)> taylor = Passenger.new({"name" => "Taylor", "age" => 12})    
-# # => #<Passenger:0x00007fe0da2cf1b0...>
-
-# pry(main)> vehicle.add_passenger(charlie)    
-
-# pry(main)> vehicle.add_passenger(jude)    
-
-# pry(main)> vehicle.add_passenger(taylor)    
-
-# pry(main)> vehicle.passengers
-# # => [#<Passenger:0x00007fe0da1ec450...>, #<Passenger:0x00007fe0da2730e0...>, #<Passenger:0x00007fe0da2cf1b0...>]
-
-# pry(main)> vehicle.num_adults
-# # => 2
